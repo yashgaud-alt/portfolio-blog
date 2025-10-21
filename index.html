@@ -1,0 +1,104 @@
+(cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF'
+diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,97 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Video Editor Portfolio</title>
++    <link rel="stylesheet" href="./styles.css">
++    <style>
++        /* Fallback styles in case CSS doesn't load */
++        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: white; color: #333; }
++        .navbar { background: white; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
++        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 100px 20px; }
++        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
++        h1 { font-size: 2.5rem; margin-bottom: 20px; }
++        h2 { font-size: 2rem; margin-bottom: 20px; }
++        .cta-button { display: inline-block; background: white; color: #667eea; padding: 15px 30px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
++        .portfolio-grid, .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
++        .portfolio-item, .blog-item { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
++        .portfolio-item img, .blog-item img { width: 100%; height: 200px; object-fit: cover; }
++        .portfolio-content, .blog-content { padding: 20px; }
++        .contact { background: #f8f9fa; padding: 80px 0; text-align: center; }
++        footer { background: #2c3e50; color: white; text-align: center; padding: 30px 0; }
++        .nav-menu { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
++        .nav-menu a { color: #333; text-decoration: none; }
++        .nav-container { display: flex; justify-content: space-between; align-items: center; }
++    </style>
++</head>
++<body>
++    <nav class="navbar">
++        <div class="nav-container">
++            <div class="nav-logo">
++                <h2>Video Editor</h2>
++            </div>
++            <ul class="nav-menu">
++                <li><a href="#home">Home</a></li>
++                <li><a href="#portfolio">Portfolio</a></li>
++                <li><a href="#blog">Blog</a></li>
++                <li><a href="#contact">Contact</a></li>
++                <li><a href="admin.html">Admin</a></li>
++            </ul>
++        </div>
++    </nav>
++
++    <main>
++        <!-- Hero Section -->
++        <section id="home" class="hero">
++            <div class="hero-content">
++                <h1>Professional Video Editing</h1>
++                <p>Creating compelling visual stories through expert video editing and post-production</p>
++                <a href="#portfolio" class="cta-button">View My Work</a>
++            </div>
++        </section>
++
++        <!-- Portfolio Preview -->
++        <section id="portfolio" class="portfolio-preview">
++            <div class="container">
++                <h2>Featured Work</h2>
++                <div class="portfolio-grid" id="portfolioGrid">
++                    <!-- Portfolio items will be loaded dynamically -->
++                </div>
++                <a href="portfolio.html" class="view-all-btn">View All Projects</a>
++            </div>
++        </section>
++
++        <!-- Blog Preview -->
++        <section id="blog" class="blog-preview">
++            <div class="container">
++                <h2>Latest Blog Posts</h2>
++                <div class="blog-grid" id="blogGrid">
++                    <!-- Blog posts will be loaded dynamically -->
++                </div>
++                <a href="blog.html" class="view-all-btn">Read All Posts</a>
++            </div>
++        </section>
++
++        <!-- Contact Section -->
++        <section id="contact" class="contact">
++            <div class="container">
++                <h2>Get In Touch</h2>
++                <p>Ready to bring your vision to life? Let's discuss your next project.</p>
++                <div class="contact-info">
++                    <p>Email: contact@videoeditor.com</p>
++                    <p>Phone: (555) 123-4567</p>
++                </div>
++            </div>
++        </section>
++    </main>
++
++    <footer>
++        <div class="container">
++            <p>&copy; 2024 Video Editor Portfolio. All rights reserved.</p>
++        </div>
++    </footer>
++
++    <script src="./script.js"></script>
++</body>
++</html>
+EOF
+)
